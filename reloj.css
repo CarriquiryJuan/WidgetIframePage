@@ -1,0 +1,116 @@
+html,body{
+    margin:0px;
+    padding:0px
+}
+#cdt a img{
+    border:0
+}
+#cdt .demo{
+    position:absolute;
+    z-index:999;
+    right:0;
+    top:0
+}
+#cdt #ie-fix{
+    display:none
+}
+#cdt .digit{
+    background-image:url(https://rany.countingdownto.com/oc-sprite?bg_color=cccc66FF&amp;date_label=4+DE+ABRIL+DE+2022&amp;encoding=jpeg&amp;font=Kelly+Slab&amp;font_push_down=0.01&amp;height=360&amp;overlay_size=700%2C180&amp;quality=0.95&amp;renderer=v1&amp;scale=2.0&amp;shadow=1&amp;shadow_blur=8&amp;shadow_color=0066cc77&amp;shadow_y=0&amp;style=TemplateDigits01&amp;text_align=center&amp;title=Viaje+punta+cana+&amp;txt_color=0066ccFF&amp;unit_labels=D%C3%ADAS%2CHORAS%2CMINUTOS%2CSEGUNDOS&amp;use_overlay=0&amp;width=700);
+    background-repeat:no-repeat;
+    width:60px
+}
+#cdt .digit-0{
+    background-position:-560px -800px
+}
+#cdt .digit-1{
+    background-position:0px -720px
+}
+#cdt .digit-2{
+    background-position:-560px -640px
+}
+#cdt .digit-3{
+    background-position:0px -560px
+}
+#cdt .digit-4{
+    background-position:-560px -480px
+}
+#cdt .digit-5{
+    background-position:0px -400px
+}
+#cdt .digit-6{
+    background-position:-560px -320px
+}
+#cdt .digit-7{
+    background-position:0px -240px
+}
+#cdt .digit-8{
+    background-position:-560px -160px
+}
+#cdt .digit-9{
+    background-position:0px -80px
+}
+#cdt .digit-x{
+    width:30px;
+    background-position:-1300px -114px
+}
+#cdt.widget-wrapper{
+    width:700px;
+    height:360px;
+    background-color:#cccc66;
+    border-radius:60px;
+    overflow:hidden;
+    position:relative;
+    margin:auto;
+    border: 3px solid #0564bb;
+}
+#cdt .content-wrapper{
+    width:100%;
+    height:100%
+}
+#cdt .spr{
+    background-image:url(https://static-sprites.countingdownto.com/production/cdt/widgets/sprites/image/4045117/oc-sprite?version=61fbf39c-11)
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx){
+    #cdt .spr{
+        background-image:url(https://static-sprites.countingdownto.com/production/cdt/widgets/sprites/retina_image/4045117/oc-sprite?version=61fbf39c-11);
+        background-size:1600px 360px
+    }
+}
+#cdt .counter-wrapper{
+    width:666px;
+    height:180.0px;
+    margin-left:34px
+}
+#cdt .counter-wrapper .counter-item{
+    height:86px;
+    float:left
+}
+#cdt .counter-wrapper .counter-group{
+    height:120px;
+    float:left;
+    position:relative;
+    overflow:hidden
+}
+#cdt .counter-group .unit-label{
+    position:absolute;
+    height:44px;
+    width:120px;
+    left:0;
+    top:79px
+}
+#cdt .days .unit-label{
+    background-position:-700px -228px
+}
+#cdt .hours .unit-label{
+    background-position:-820px -228px
+}
+#cdt .minutes .unit-label{
+    background-position:-940px -228px
+}
+#cdt .seconds .unit-label{
+    background-position:-1060px -228px
+}
+#cdt .header{
+    height:140px;
+    width:100%
+}

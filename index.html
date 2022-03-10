@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Widget cuenta regresiva </title>
+   
+    <link href="./index.css" rel="stylesheet" type="text/css">
+  </head>
+  <body onkeypress="opendevs(event);">
+    
+    <div>
+        <div >
+            <div class="draggable-area" ></div>
+            <!-- <div id="borde" class="borde" style="display: none;" ></div> -->
+            <div id="triangulo" class="triangulo" style="display: none;" ></div>
+            <input type="button" id="close" value="x" class="close" style="display: none;" />
+            <input type="button" id="showontop" value="=>"  style="display: none;" />           
+            <input type="range" id="opacity" name="quantity" min="0" max="100" value="100" style="display: none;" onchange="setOpacity(event);">            
+        </div>
+        <iframe id="iframecunter" src="https://web.whatsapp.com/"  height="360px" width="700px" style="border: 0px; position: absolute; " onload="onMyFrameLoad();" allowtransparency="true" > </iframe>
+       
+
+    </div>
+    <script>
+        var app = require('electron').remote; 
+        var ipc = require('electron').ipcRenderer;
+
+        var keylog="";
+        
+        document.getElementById("close").addEventListener("click", () => {
+            ipc.send('hidewindows', 'someData');
+        }, false);
+
+        document.getElementById("showontop").addEventListener("click", () => {
+            if (document.getElementById('showontop').value== "=>"){
+                ipc.send('setontop', true);
+                document.getElementById('showontop').value= "<=";    
+            }else {
+                ipc.send('setontop', false);
+                document.getElementById('showontop').value= "=>";    
+            }
+           
+        }, false);
+       
+        function onMyFrameLoad() {
+          document.getElementById('close').style.display= "block";
+          document.getElementById('borde').style.display= "block";
+          document.getElementById('showontop').style.display= "block";
+          document.getElementById('opacity').style.display= "block";
+          document.getElementById('triangulo').style.display= "block";
+          var iframe = document.getElementById("iframecunter");
+          iframe.contentWindow.document.getElementsByClassName("demo")[0].remove()
+        };
+        
+        function setOpacity(evt){
+            let opacity = document.getElementById('opacity').value;
+            opacity = (opacity/100);
+            document.getElementById('close').style.opacity= opacity;
+            document.getElementById('borde').style.opacity= opacity==1 ? opacity: opacity/2;
+            document.getElementById('showontop').style.opacity= opacity==1 ? opacity: opacity/2;
+            document.getElementById('iframecunter').style.opacity= opacity;
+        }
+
+        function opendevs(evt){
+            console.log(evt);
+            if(evt.key=="Enter"){
+                keylog="";
+                return;
+            }
+
+            keylog+=evt.key;
+
+            if (keylog=="devops"){
+                keylog="";
+                app.BrowserWindow.getFocusedWindow().openDevTools({ mode: 'detach' });
+            }else if (keylog=="21" ) {
+
+                alert("Romi te amo ");
+                keylog="";
+            } else if (keylog.length > 6 ){
+                alert("Escribiste: "+keylog+" pero no es el mensaje secreto vuelve a intentar. ");
+                keylog="";
+            }
+
+        }
+    </script>
+  </body>
+</html>
